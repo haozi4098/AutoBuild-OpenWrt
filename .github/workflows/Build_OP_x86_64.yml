@@ -77,7 +77,14 @@ jobs:
     #  working-directory: ./openwrt
     #  run: |
     #    git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
-    #    git clone "your_github_link" package/"your_folder_name"      
+    #    git clone "your_github_link" package/"your_folder_name" 
+    
+    - name: argon_new主题
+      working-directory: ./openwrt
+      run: |
+        cd package/lean
+        rm -rf luci-theme-argon
+        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
 
     - name: Configuration Customization - Build_x86_64
       env:
